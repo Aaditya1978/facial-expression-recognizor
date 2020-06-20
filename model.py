@@ -23,7 +23,7 @@ class FacialExpressionModel(object):
 
         # load weights into the new model
         self.loaded_model.load_weights(model_weights_file)
-        self.loaded_model._make_predict_function()
+        self.loaded_model.make_predict_function()
 
     def predict_emotion(self, img):
         self.preds = self.loaded_model.predict(img)
