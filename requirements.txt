@@ -10,3 +10,5 @@ scikit-learn>=0.22
 matplotlib>=3.2.1
 pandas>=1.0.4
 opencv-python==4.2.0.34 
+opencv-contrib-python-headless
+
