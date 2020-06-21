@@ -45,7 +45,7 @@ def camera(image):
             
     cap.release()    
     
-@app.route('/prediction')
+@app.route('/prediction', methods=["POST"])
 def prediction():
     if request.method == "POST":
         image = request.data
