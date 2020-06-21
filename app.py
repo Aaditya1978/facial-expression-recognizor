@@ -40,10 +40,9 @@ def camera(image):
         cv2.rectangle(test_img,(x,y),(x+w,y+h),(255,0,0),2)
     
         ret, jpeg = cv2.imencode('.jpg', test_img)
-        jpeg = jpeg.tobytes()
+        jpeg = jpeg.tolist()
         return jpeg
-            
-    cap.release()    
+           
     
 @app.route('/prediction', methods=["POST"])
 def prediction():
