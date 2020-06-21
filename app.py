@@ -23,7 +23,7 @@ def index():
 
 def camera(image):
     
-    test_img=image
+    test_img=Image.open(StringIO(image))
     
     gray_img= cv2.cvtColor(test_img, cv2.COLOR_BGR2GRAY)
     
