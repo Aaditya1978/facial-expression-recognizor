@@ -22,6 +22,7 @@ def index():
     return render_template('index.html')
 
 def camera(image):
+    image.decode()
     test_img=Image.open(StringIO(image))
     
     gray_img= cv2.cvtColor(test_img, cv2.COLOR_BGR2GRAY)
