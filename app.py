@@ -41,8 +41,7 @@ def camera(image):
     
         ret, jpeg = cv2.imencode('.jpg', test_img)
         jpeg = jpeg.tobytes()
-        jpeg = (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + jpeg + b'\r\n\r\n')
-        yield(jpeg)
+        yield(b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + jpeg + b'\r\n\r\n')
                 
 @app.route('/prediction', methods=["POST"])
 def prediction():
