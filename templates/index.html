@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facial Expression Recognization</title>
+    <style>
+        video, canvas {
+            width: 640px;
+            height: 480px;
+        }
+        #framegrab {
+            display: none;
+        }
+        #face-detector {
+            position: absolute;
+            margin: auto;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            width: 640px;
+            height: 480px;
+        }
+        #face-detector video, #face-detector canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="face-detector">
+        <video id="webcam" autoplay></video>
+        <canvas id="rectangles"></canvas>
+    </div>
+
+    <div>
+        <canvas id="framegrab"></canvas>
+    </div>
+
+    <div id="error"></div>
+</body>
+    <script src="static/js/video.js"></script>
+    <script>
+        var faceDetector = new FaceDetector("webcam", "framegrab", "rectangles");
+        faceDetector.start();
+    </script>
+</html>
