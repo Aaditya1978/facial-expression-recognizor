@@ -22,6 +22,7 @@ def index():
     return render_template('index.html')
 
 def camera(image):
+    f = open(image, rb)
     image.decode()
     test_img=Image.open(StringIO(image))
     
