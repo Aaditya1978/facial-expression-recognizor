@@ -22,7 +22,11 @@ def index():
     return render_template('index.html')
 
 def camera(image):
-    cap = cv2.VideoCapture(image)
+    f = open(image, 'rb')
+    image_bytes = f.read()  # b'\xff\xd8\xff\xe0\x00\x10...'
+    decoded = cv2.imdecode(np.frombuffer(image_bytes, np.uint8), -1)
+    
+    cap = cv2.VideoCapture(decoded)
     ret,test_img=cap.read()# captures frame and returns boolean value and captured image
     
     gray_img= cv2.cvtColor(test_img, cv2.COLOR_BGR2GRAY)
