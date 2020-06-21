@@ -22,7 +22,7 @@ def index():
     return render_template('index.html')
 
 def camera(image):
-    ret,test_img=cap.read()# captures frame and returns boolean value and captured image
+    ret,test_img=image.read()# captures frame and returns boolean value and captured image
     
     gray_img= cv2.cvtColor(test_img, cv2.COLOR_BGR2GRAY)
     
