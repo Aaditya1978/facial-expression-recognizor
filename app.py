@@ -23,7 +23,7 @@ def index():
 
 def camera(image):
     
-    ret,test_img=image.read()# captures frame and returns boolean value and captured image
+    test_img=image
     
     gray_img= cv2.cvtColor(test_img, cv2.COLOR_BGR2GRAY)
     
